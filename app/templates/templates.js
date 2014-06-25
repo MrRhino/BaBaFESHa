@@ -1,88 +1,85 @@
 this["MyApp"] = this["MyApp"] || {};
 this["MyApp"]["Templates"] = this["MyApp"]["Templates"] || {};
 
-this["MyApp"]["Templates"]["customers"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["MyApp"]["Templates"]["productEditView"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, functionType="function", self=this, blockHelperMissing=helpers.blockHelperMissing;
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1, helper, options;
-  buffer += "\n        <tr> \n            <th colspan=\"2\">"
-    + escapeExpression((helper = helpers.fullName || (depth0 && depth0.fullName),options={hash:{},data:data},helper ? helper.call(depth0, (depth0 && depth0.name), options) : helperMissing.call(depth0, "fullName", (depth0 && depth0.name), options)))
-    + "</th>\n        </tr>\n        <tr>\n            <td>e-mail</td> \n            <td><a href=\"mailto:";
-  if (helper = helpers.email) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.email); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (helper = helpers.email) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.email); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</a></td> \n        </tr> \n        <tr>\n            <td>Secondary Phone</td> \n            <td>";
-  if (helper = helpers.secondaryPhoneNumber) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.secondaryPhoneNumber); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td> \n        </tr> \n        <tr>\n            <td>CPR</td> \n            <td>";
-  if (helper = helpers.cpr) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.cpr); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</a></td> \n        </tr> \n        <tr>\n            <td valign=top>Address</td> \n            <td>"
-    + escapeExpression((helper = helpers.address || (depth0 && depth0.address),options={hash:{},data:data},helper ? helper.call(depth0, (depth0 && depth0.address), options) : helperMissing.call(depth0, "address", (depth0 && depth0.address), options)))
-    + "</td> \n        </tr> \n        <tr>\n            <td>Balance</td> \n            <td>";
-  if (helper = helpers.balance) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.balance); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</td> \n        </tr> \n        <tr>\n            <td valign=top>Selective Services</td> \n            <td>"
-    + escapeExpression((helper = helpers.selectiveServices || (depth0 && depth0.selectiveServices),options={hash:{},data:data},helper ? helper.call(depth0, (depth0 && depth0.selectiveServices), options) : helperMissing.call(depth0, "selectiveServices", (depth0 && depth0.selectiveServices), options)))
-    + "</td> \n        </tr> \n        <tr>\n            <td valign=top>Receive Promomotions Permissions</td> \n            <td>"
-    + escapeExpression((helper = helpers.receivePromomotionsPermissions || (depth0 && depth0.receivePromomotionsPermissions),options={hash:{},data:data},helper ? helper.call(depth0, (depth0 && depth0.receivePromomotionsPermissions), options) : helperMissing.call(depth0, "receivePromomotionsPermissions", (depth0 && depth0.receivePromomotionsPermissions), options)))
-    + "</td> \n\n        </tr> \n        ";
+  
+  return " Update ";
+  }
+
+function program3(depth0,data) {
+  
+  
+  return " Create ";
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = "", helper, options;
+  buffer += "\n        <input type=\"hidden\" name=\"id\" value=\""
+    + escapeExpression((helper = helpers.uesc || (depth0 && depth0.uesc),options={hash:{},data:data},helper ? helper.call(depth0, (depth0 && depth0.id), options) : helperMissing.call(depth0, "uesc", (depth0 && depth0.id), options)))
+    + "\" />\n        <input type=\"button\" id=\"deleteProduct\" value=\"Delete\" />\n    ";
   return buffer;
   }
 
-  buffer += "<table class=\"customers\">\n    <tbody> \n        ";
-  options={hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data}
-  if (helper = helpers.customers) { stack1 = helper.call(depth0, options); }
-  else { helper = (depth0 && depth0.customers); stack1 = typeof helper === functionType ? helper.call(depth0, options) : helper; }
-  if (!helpers.customers) { stack1 = blockHelperMissing.call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data}); }
+  buffer += "<form id=\"editForm\">\n    <table>\n        <thead>\n            <tr>\n                <th>Name</th>\n                <th>Description</th>\n                <th>Price</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td><input type=\"text\" name=\"name\" value=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.product)),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"></td>\n                <td><input type=\"text\" name=\"description\" value=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.product)),stack1 == null || stack1 === false ? stack1 : stack1.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"></td>\n                <td><input type=\"text\" name=\"price\" value=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.product)),stack1 == null || stack1 === false ? stack1 : stack1.price)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <hr />\n    <button type=\"submit\">";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.product), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " \n    </tbody> \n</table>\n";
+  buffer += "</button>\n    ";
+  options={hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data}
+  if (helper = helpers.product) { stack1 = helper.call(depth0, options); }
+  else { helper = (depth0 && depth0.product); stack1 = typeof helper === functionType ? helper.call(depth0, options) : helper; }
+  if (!helpers.product) { stack1 = blockHelperMissing.call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data}); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n</form>\n";
   return buffer;
   });
 
-this["MyApp"]["Templates"]["users"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["MyApp"]["Templates"]["productListView"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, functionType="function", self=this, blockHelperMissing=helpers.blockHelperMissing;
+  var buffer = "", stack1, helper, options, functionType="function", escapeExpression=this.escapeExpression, self=this, blockHelperMissing=helpers.blockHelperMissing;
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1, helper, options;
-  buffer += " \n        <tr> \n            <td>"
-    + escapeExpression((helper = helpers.fullName || (depth0 && depth0.fullName),options={hash:{},data:data},helper ? helper.call(depth0, (depth0 && depth0.person), options) : helperMissing.call(depth0, "fullName", (depth0 && depth0.person), options)))
-    + "</td> \n            <td>";
-  if (helper = helpers.jobTitle) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.jobTitle); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  var buffer = "", stack1, helper;
+  buffer += "\n            <tr>\n                <td>";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</td> \n            <td><a href=\"https://twitter.com/";
-  if (helper = helpers.twitter) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.twitter); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+    + "</td>\n                <td>";
+  if (helper = helpers.description) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.description); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "\">@";
-  if (helper = helpers.twitter) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.twitter); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+    + "</td>\n                <td>";
+  if (helper = helpers.price) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.price); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</a></td> \n        </tr> \n        ";
+    + "</td>\n                <td><input type=\"button\" onclick=\"location.href='#/edit/";
+  if (helper = helpers.id) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.id); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "'\" value=\"Edit\"/></td>\n            </tr>   \n        ";
   return buffer;
   }
 
-  buffer += "<table class=\"users\">\n    <thead> \n        <th>Name</th> \n        <th>Job Title</th> \n        <th>Twitter</th> \n    </thead> \n    <tbody> \n        ";
+  buffer += "<input type=\"button\" onclick=\"location.href='#/new'\" value=\"New\"/>\n <hr />\n<table class=\"table table-striped\">\n    <thead>\n        <tr>\n            <th>Name</th>\n            <th>Description</th>\n            <th>Price</th>\n            <th></th>\n        </tr>\n    </thead>\n    <tbody>\n        ";
   options={hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data}
-  if (helper = helpers.users) { stack1 = helper.call(depth0, options); }
-  else { helper = (depth0 && depth0.users); stack1 = typeof helper === functionType ? helper.call(depth0, options) : helper; }
-  if (!helpers.users) { stack1 = blockHelperMissing.call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data}); }
+  if (helper = helpers.products) { stack1 = helper.call(depth0, options); }
+  else { helper = (depth0 && depth0.products); stack1 = typeof helper === functionType ? helper.call(depth0, options) : helper; }
+  if (!helpers.products) { stack1 = blockHelperMissing.call(depth0, stack1, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data}); }
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " \n    </tbody> \n</table>";
+  buffer += "\n    </tbody>\n</table>";
   return buffer;
   });

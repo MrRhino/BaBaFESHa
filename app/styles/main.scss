@@ -3,11 +3,62 @@
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
+
+// Modify bootstrap.scss
+.table {
+  // Remove bottom border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+// Modify bootstrap.scss
+.container {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /* Space out content a bit */
 body {
     padding:15px;
     color:#555;
-    background-color:lightgrey;
+    background-color:snow;
+}
+
+h1{
+	display:inline;
+	font-size: 4em;
+}
+
+h3{
+	display:inline;
+	font-size: 1,5em;
+	font-weight: bolder;
+	color: black; 
+}
+
+
+.inline{
+	display:inline;
+}
+
+@mixin headertext {
+	@media (max-width:319px){    font-size:3vw}
+	@media (min-width:319px){    font-size:4vw}
+}
+
+@mixin celltext {
+	@media (max-width:319px){    font-size:2vw}
+	@media (min-width:319px){    font-size:3vw}
 }
 
 .users {
@@ -15,32 +66,37 @@ body {
 	border: solid 4px darkgrey;
 	border-spacing: 2px;
 	th {
+		@include headertext;
 		border-top: solid 2px darkgrey;
-		padding: 2px;
 		background-color: silver;
+		padding: 0.5em;
 	}
 	td {
+		@include celltext;
 		border: solid 1px silver;
-		padding: 2px;
+		padding: 0.5em;
 	}
 }
 .customers {
 	width:100%;
 	border: solid 4px brown;
+	font-size: 2vw;
 	th {
+		@include headertext;
 		border-top: solid 2px brown;
-		padding: 2px;
 		background-color: #BB7777;
+		padding: 0.5em;
 	}
 	td {
+		@include celltext;
 		border: solid 1px #BB7777;
-		padding: 2px;
+		padding: 0.5em;
 	}
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        max-width: 940px;
     }
 }
