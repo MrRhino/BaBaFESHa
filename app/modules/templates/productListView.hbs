@@ -1,0 +1,22 @@
+<input type="button" onclick="location.href='#/new'" value="New"/>
+ <hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#products}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{description}}</td>
+                <td>{{price}}</td>
+                <td><input type="button" onclick="location.href='#/edit/{{id}}'" value="Edit"/></td>
+            </tr>   
+        {{/products}}
+    </tbody>
+</table>

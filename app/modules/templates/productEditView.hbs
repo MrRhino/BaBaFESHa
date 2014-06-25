@@ -1,0 +1,24 @@
+<form id="editForm">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="name" value="{{product.name}}"></td>
+                <td><input type="text" name="description" value="{{product.description}}"></td>
+                <td><input type="text" name="price" value="{{product.price}}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <button type="submit">{{#if product}} Update {{else}} Create {{/if}}</button>
+    {{#product}}
+        <input type="hidden" name="id" value="{{uesc id}}" />
+        <input type="button" id="deleteProduct" value="Delete" />
+    {{/product}}
+</form>
